@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForceLens — Privacy Policy</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:        #6366F1;
+      --brand-subtle: #EEF2FF;
+      --bg:           #F8FAFC;
+      --surface:      #FFFFFF;
+      --sunken:       #F1F5F9;
+      --border:       #E2E8F0;
+      --text-primary:   #0F172A;
+      --text-secondary: #475569;
+      --text-muted:     #78909C;
+      --radius:       10px;
+      --success:      #10B981;
+      --warning:      #F59E0B;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg);
+      padding: 0 16px 64px;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 0 32px;
+      border-bottom: 1.5px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--brand);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-mark svg { display: block; }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+    .page-header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .page-header .meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Layout ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── Summary card ── */
+    .summary-card {
+      background: var(--brand-subtle);
+      border: 1.5px solid rgba(99,102,241,.25);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+    .summary-card h2 {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand);
+      margin-bottom: 12px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .summary-item .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+    .dot-green  { background: var(--success); }
+    .dot-brand  { background: var(--brand); }
+    .dot-warn   { background: var(--warning); }
+
+    /* ── Section ── */
+    section {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    section h2 {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    section .section-intro {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    p { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Permission table ── */
+    .perm-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    .perm-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .perm-table td {
+      font-size: 12px;
+      color: var(--text-secondary);
+      padding: 10px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    .perm-table tr:last-child td { border-bottom: none; }
+    .perm-table td:first-child {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      color: var(--brand);
+      white-space: nowrap;
+      width: 160px;
+    }
+    .perm-table tr:hover td { background: var(--sunken); }
+
+    /* ── Data table ── */
+    .data-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    .data-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .data-table td {
+      font-size: 12px;
+      color: var(--text-secondary);
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .badge-no       { background: #D1FAE5; color: #065F46; }
+    .badge-local    { background: var(--brand-subtle); color: var(--brand); }
+    .badge-optional { background: #FEF3C7; color: #92400E; }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--sunken);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-box .icon {
+      width: 40px; height: 40px;
+      background: var(--brand-subtle);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .contact-box p { font-size: 12px; color: var(--text-secondary); margin: 0; }
+    .contact-box a { color: var(--brand); text-decoration: none; font-weight: 600; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 760px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    footer span { font-size: 11px; color: var(--text-muted); }
+
+    @media (max-width: 600px) {
+      section { padding: 18px 16px; }
+      .page-header { padding: 32px 0 24px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      .perm-table td:first-child { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="logo-row">
+      <div class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+      <span class="brand-name">ForceLens</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: June 2025 &nbsp;·&nbsp; Version 1.0</p>
+  </div>
+
+  <div class="content">
+
+    <!-- TL;DR summary -->
+    <div class="summary-card">
+      <h2>The short version</h2>
+      <div class="summary-grid">
+        <div class="summary-item"><span class="dot dot-green"></span>All log analysis happens locally in your browser — nothing is sent to ForceLens servers.</div>
+        <div class="summary-item"><span class="dot dot-green"></span>Your Salesforce session cookie is used only to call Salesforce APIs on your behalf.</div>
+        <div class="summary-item"><span class="dot dot-green"></span>AI features are fully opt-in. Your own API key goes directly to your chosen provider.</div>
+        <div class="summary-item"><span class="dot dot-green"></span>No personal data, browsing history, or log content is ever sold or shared.</div>
+        <div class="summary-item"><span class="dot dot-brand"></span>The optional Support portal stores only what you voluntarily submit (bug reports).</div>
+        <div class="summary-item"><span class="dot dot-brand"></span>You can delete your support submissions at any time.</div>
+      </div>
+    </div>
+
+    <!-- 1. Who we are -->
+    <section>
+      <h2>1. Who we are</h2>
+      <p>ForceLens is a Chrome extension built for Salesforce developers. It helps you analyze Apex debug logs directly in your browser. The extension is developed and maintained by the ForceLens team and distributed through the Chrome Web Store.</p>
+      <p>Questions? Reach us at the Support portal inside the extension or via the contact details at the bottom of this page.</p>
+    </section>
+
+    <!-- 2. What data we collect -->
+    <section>
+      <h2>2. What data we collect (and what we don't)</h2>
+      <p class="section-intro">ForceLens is designed with a local-first, privacy-first architecture. Here is a precise breakdown.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data type</th>
+            <th>Collected?</th>
+            <th>Where it goes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apex debug log content</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td>Stored in your browser's local storage. Never sent to ForceLens.</td>
+          </tr>
+          <tr>
+            <td>Salesforce session token (sid)</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td>Read from your browser cookies in memory only. Used to call Salesforce APIs on your behalf. Never stored or transmitted to ForceLens.</td>
+          </tr>
+          <tr>
+            <td>AI provider API key</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td>Stored in your browser's local storage. Sent directly to your chosen AI provider (Anthropic, OpenAI, etc.). Never seen by ForceLens.</td>
+          </tr>
+          <tr>
+            <td>Log analysis data (AI features)</td>
+            <td><span class="badge badge-optional">Opt-in only</span></td>
+            <td>A structured summary (not raw log text) is sent to your chosen AI provider when you explicitly trigger AI analysis. Opt-in — disabled by default.</td>
+          </tr>
+          <tr>
+            <td>Bug reports / feature requests</td>
+            <td><span class="badge badge-optional">Opt-in only</span></td>
+            <td>Voluntarily submitted text via the Support portal. Stored in our Supabase database. You can delete your own submissions at any time.</td>
+          </tr>
+          <tr>
+            <td>User preferences (theme, settings)</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td>Stored in your browser's local storage. Never transmitted.</td>
+          </tr>
+          <tr>
+            <td>Browsing history</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Not collected.</td>
+          </tr>
+          <tr>
+            <td>Personal identity / PII</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Not collected. The Support portal uses an anonymous ID — no email is required.</td>
+          </tr>
+          <tr>
+            <td>Financial / payment data</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Not collected. ForceLens is free.</td>
+          </tr>
+          <tr>
+            <td>Health or sensitive personal data</td>
+            <td><span class="badge badge-no">Never</span></td>
+            <td>Not collected.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3. Permissions explained -->
+    <section>
+      <h2>3. Why we need each browser permission</h2>
+      <p class="section-intro">Chrome requires us to declare every permission. Here is exactly why each one is needed.</p>
+
+      <table class="perm-table">
+        <thead>
+          <tr><th>Permission</th><th>Why it's needed</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>storage<br>unlimitedStorage</td>
+            <td>Salesforce debug logs can reach 10–50 MB. Chrome's standard 5 MB storage quota would silently lose data on any real enterprise log. <code>unlimitedStorage</code> ensures the full log is preserved locally for analysis. All data stays on your device.</td>
+          </tr>
+          <tr>
+            <td>cookies</td>
+            <td>The Salesforce REST and Tooling APIs require a Bearer token — the <code>sid</code> session cookie. Salesforce intentionally sets this as an <strong>HttpOnly</strong> cookie, meaning page scripts and content scripts cannot read it for security reasons. Only the extension background worker (with this permission) can read it via <code>chrome.cookies.get()</code>. The token is used in memory for the API call and is never stored or sent anywhere other than back to your Salesforce org. This is the same technique used by Salesforce Inspector.</td>
+          </tr>
+          <tr>
+            <td>tabs</td>
+            <td>ForceLens opens its analysis workspace as a browser tab. This permission is required to open, reuse, or focus that tab. No tab URLs, titles, or page content are read or transmitted.</td>
+          </tr>
+          <tr>
+            <td>activeTab</td>
+            <td>Used to detect which Salesforce page you are currently on when you trigger the extension, so the correct log context is passed to the workspace.</td>
+          </tr>
+          <tr>
+            <td>Host: *.salesforce.com<br>and related Salesforce domains</td>
+            <td>Required to inject the "Inspect Log" and "Analyze Flow" buttons into Salesforce pages, and to make authenticated API calls to your org. All 17 Salesforce domain families are covered — commercial, Government Cloud (.mil), China Cloud (.cn), MCAS-proxied, and Experience Cloud.</td>
+          </tr>
+          <tr>
+            <td>Host: api.anthropic.com<br>api.openai.com<br>api.groq.com<br>openrouter.ai</td>
+            <td>Required for opt-in AI features. When you configure an AI provider with your own API key, the extension connects directly to that provider's API. ForceLens does not proxy these requests — your key and data go straight to your provider.</td>
+          </tr>
+          <tr>
+            <td>Host: supabase.co</td>
+            <td>Powers the optional Support &amp; Collaboration Portal. Used only when you voluntarily submit a bug report or feature request. No Salesforce data or log content is ever sent to Supabase.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. AI features -->
+    <section>
+      <h2>4. AI features — how they work</h2>
+      <p>AI Pulse, Ask AI, and Flow AI Summary are <strong>fully opt-in</strong>. They are disabled by default and require you to enter your own API key from a supported provider (Anthropic Claude, OpenAI, Groq, or OpenRouter).</p>
+      <p>When you trigger an AI analysis:</p>
+      <p>✔ A structured <em>summary</em> of the analyzed log (method names, DML/SOQL counts, error types) is sent to your chosen provider — not the raw log text.</p>
+      <p>✔ Your API key is stored only in your browser's local storage and is sent directly to your provider. ForceLens never receives or stores it.</p>
+      <p>✔ Each provider's own privacy policy governs how they handle the data you send them.</p>
+      <p>✔ You can remove your API key and disable AI features at any time in the Configure AI settings.</p>
+    </section>
+
+    <!-- 5. Data storage & retention -->
+    <section>
+      <h2>5. Data storage and retention</h2>
+      <p><strong>Local data (log content, preferences, bookmarks, API keys):</strong> stored in <code>chrome.storage.local</code> on your device. It persists until you clear your browser extension storage, uninstall the extension, or manually clear it from the Settings view. ForceLens has no access to this data.</p>
+      <p><strong>Support portal submissions:</strong> stored in our Supabase database. You can delete your own posts and replies at any time directly from the Support portal UI. We do not retain deleted submissions.</p>
+      <p><strong>Salesforce session token:</strong> read into memory for the duration of a Tooling/REST API call and immediately discarded. It is never written to any storage.</p>
+    </section>
+
+    <!-- 6. Third-party services -->
+    <section>
+      <h2>6. Third-party services</h2>
+      <p><strong>Supabase</strong> — used for the optional Support portal (bug reports and feature requests). Data is stored in the EU region. See <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</p>
+      <p><strong>AI providers (opt-in only)</strong> — Anthropic, OpenAI, Groq, OpenRouter. Each provider's privacy policy applies to data you send through their API. ForceLens does not control or have visibility into how they process data.</p>
+      <p>ForceLens does not use any analytics, telemetry, tracking pixels, or advertising SDKs.</p>
+    </section>
+
+    <!-- 7. Children -->
+    <section>
+      <h2>7. Children's privacy</h2>
+      <p>ForceLens is a professional developer tool intended for users aged 18 and over. We do not knowingly collect any information from children under 13. If you believe a child has submitted data through the Support portal, please contact us and we will delete it promptly.</p>
+    </section>
+
+    <!-- 8. Your rights -->
+    <section>
+      <h2>8. Your rights</h2>
+      <p>Because ForceLens stores almost all data locally on your device, you have full control over it at all times. You can:</p>
+      <p>✔ <strong>Delete local data</strong> — clear extension storage from your browser or uninstall the extension.</p>
+      <p>✔ <strong>Delete support submissions</strong> — use the Delete button on your own posts and replies in the Support portal.</p>
+      <p>✔ <strong>Disable AI features</strong> — remove your API key from the Configure AI settings at any time.</p>
+      <p>If you have questions or requests about data held in our Support portal database, contact us at the address below.</p>
+    </section>
+
+    <!-- 9. Changes -->
+    <section>
+      <h2>9. Changes to this policy</h2>
+      <p>If we make material changes to this Privacy Policy, we will update the "Effective date" at the top of this page and post a notice in the What's Next tab inside the extension. Continued use of ForceLens after the effective date constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <!-- Contact -->
+    <div class="contact-box">
+      <div class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </div>
+      <div>
+        <h3>Questions about this policy?</h3>
+        <p>Use the Support portal inside ForceLens, or email us at <a href="mailto:sakhvalaps@gmail.com">sakhvalaps@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>© 2025 ForceLens. All rights reserved.</span>
+    <span>This policy applies to the ForceLens Chrome extension.</span>
+  </footer>
+
+</body>
+</html>
